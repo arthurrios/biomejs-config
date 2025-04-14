@@ -1,0 +1,59 @@
+{
+	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
+	"files": {
+		"ignore": [
+			"node_modules",
+			"dist",
+			"build",
+			"out",
+			".next",
+			".turbo",
+			".vercel",
+			".idea",
+			".vscode"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "all",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "always"
+		}
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"noUselessElse": "off",
+				"useSelfClosingElements": "off"
+			},
+			"complexity": {
+				"useArrowFunction": "off"
+			},
+			"correctness": {
+				"noUnusedImports": "warn"
+			},
+			"nursery": {
+				"useAriaPropsSupportedByRole": "warn"
+			},
+			"a11y": {
+				"useAltText": "warn",
+				"useValidAriaProps": "warn",
+				"useValidAriaValues": "warn",
+				"useAriaPropsForRole": "warn",
+				"noAriaUnsupportedElements": "warn"
+			}
+		}
+	}
+}

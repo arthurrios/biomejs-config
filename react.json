@@ -1,0 +1,35 @@
+{
+	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
+	"files": {
+		"ignore": ["node_modules", "dist", "build"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "space",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "all",
+			"arrowParentheses": "always",
+			"semicolons": "asNeeded",
+			"lineEnding": "lf"
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"nursery": {
+				"useAriaPropsSupportedByRole": "warn"
+			},
+			"a11y": {
+				"useAltText": "warn",
+				"useAriaPropsForRole": "warn",
+				"noAriaUnsupportedElements": "warn"
+			}
+		}
+	}
+}

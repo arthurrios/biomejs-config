@@ -1,0 +1,37 @@
+{
+	"name": "@arthurrios/biome-config",
+	"version": "1.0.5",
+	"private": false,
+	"description": "Biome configuration for React, Next.js, and Node projects used by Rocketseat.",
+	"main": "biome.json",
+	"license": "MIT",
+	"repositoryUrl": "https://github.com/arthurrios/rocketseat-biome-config.git",
+	"peerDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"typescript": ">=5",
+		"react": ">=16.0.0",
+		"next": ">=13.0.0"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		},
+		"react": {
+			"optional": true
+		},
+		"next": {
+			"optional": true
+		}
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@changesets/cli": "^2.29.0",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^13.0.1",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^11.0.1",
+		"@semantic-release/npm": "^12.0.1",
+		"@semantic-release/release-notes-generator": "^14.0.3",
+		"semantic-release": "^24.2.3"
+	}
+}
