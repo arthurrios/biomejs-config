@@ -1,34 +1,36 @@
-name: Publish
+name: Release
+
 on:
   push:
-    branches: [main]
-  pull_request: 
-    branches: [main]
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+    branches:
+      - main
 
 permissions:
+  id-token: write
   contents: write
+  issues: write
   pull-requests: write
+  packages: write
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - run: bun install
-      - name: Create Release Pull Request or Publish
-        id: changesets
-        uses: changesets/action@v1
+      - name: Use Node.js
+        uses: actions/setup-node@v3
         with:
-          publish: bun run release
+          node-version: 22
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
+
