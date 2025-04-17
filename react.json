@@ -22,8 +22,15 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
+			"style": {
+				"noUselessElse": "off",
+				"useSelfClosingElements": "off"
+			},
 			"nursery": {
 				"useAriaPropsSupportedByRole": "warn"
+			},
+			"correctness": {
+				"noUnusedImports": "warn"
 			},
 			"a11y": {
 				"useAltText": "warn",
