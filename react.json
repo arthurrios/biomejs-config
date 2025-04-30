@@ -24,13 +24,20 @@
 			"recommended": true,
 			"style": {
 				"noUselessElse": "off",
-				"useSelfClosingElements": "off"
+				"useSelfClosingElements": "off",
+				"useImportType": "off"
 			},
 			"nursery": {
 				"useAriaPropsSupportedByRole": "warn"
 			},
+			"complexity": {
+				"useArrowFunction": "off",
+				"useOptionalChain": "off"
+			},
 			"correctness": {
-				"noUnusedImports": "warn"
+				"noUnusedVariables": "warn",
+				"noUnusedImports": "warn",
+				"useExhaustiveDependencies": "off"
 			},
 			"a11y": {
 				"useAltText": "warn",
