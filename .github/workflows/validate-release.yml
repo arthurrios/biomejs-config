@@ -1,0 +1,31 @@
+name: Validate Release
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout & fetch tags
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Fetch missing tags
+        run: git fetch --tags --prune
+
+      - name: Verify latest npm tag
+        run: |
+          latest=$(npm view @arthurrios/biome-config version)
+          echo "npm latest: $latest"
+          if git tag -l "v$latest" | grep -q "v$latest"; then
+            echo "Found tag v$latest"
+          else
+            echo "Missing tag v$latest" && exit 1
+          fi

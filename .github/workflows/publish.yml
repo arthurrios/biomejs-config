@@ -1,13 +1,12 @@
 name: Publish
+
 on:
   push:
     branches: [main]
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
 permissions:
-  id-token: write
   contents: write
+  id-token: write
   issues: write
   pull-requests: write
 
@@ -20,17 +19,12 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Fetch all tags
+      - name: Fetch missing tags
         run: git fetch --tags --prune
 
-      - name: Debug Git tags
-        run: |
-          echo "Tags:" && git tag
-          echo "Last tag by describe:" && git describe --tags --abbrev=0
-
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v3
         with:
-          bun-version: latest
+          node-version: 20.x
 
       - name: Semantic Release and Publish
         uses: cycjimmy/semantic-release-action@v4
