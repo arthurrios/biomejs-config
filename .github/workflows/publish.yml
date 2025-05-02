@@ -23,6 +23,11 @@ jobs:
       - name: Fetch all tags
         run: git fetch --tags --prune
 
+      - name: Debug Git tags
+        run: |
+          echo "Tags:" && git tag
+          echo "Last tag by describe:" && git describe --tags --abbrev=0
+
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
