@@ -12,20 +12,24 @@ permissions:
   pull-requests: write
 
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          persist-credentials: false
           fetch-depth: 0
-
+      - name: Verify tags
+        run: git tag
+      - name: Fetch missing tags
+        run: git fetch --tags --prune
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
-      - name: Semantic Release
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+      - name: Semantic Release and Publish
         uses: cycjimmy/semantic-release-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
