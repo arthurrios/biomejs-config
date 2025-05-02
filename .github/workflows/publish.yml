@@ -20,6 +20,9 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
+      - name: Verify tag
+        run: git tag --points-at HEAD || exit 1
+
       - name: Fetch all tags
         run: git fetch --tags --prune
 
