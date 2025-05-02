@@ -1,6 +1,6 @@
 {
 	"name": "@arthurrios/biome-config",
-	"version": "1.0.8",
+	"version": "1.0.0",
 	"private": false,
 	"description": "Biome configuration for React, Next.js, and Node projects used by Rocketseat.",
 	"main": "biome.json",
