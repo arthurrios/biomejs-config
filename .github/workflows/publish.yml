@@ -24,10 +24,6 @@ jobs:
         with:
           bun-version: latest
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20.x
-
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:
