@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/arthurrios/biomejs-config/compare/v1.0.0...v1.0.1) (2025-05-02)
+
+
+### Bug Fixes
+
+* fix releaserc order ([474b5f5](https://github.com/arthurrios/biomejs-config/commit/474b5f5dbbd2d7ce12d4253280ab47446031ea77))
+
 # 1.0.0 (2025-05-02)
 
 
