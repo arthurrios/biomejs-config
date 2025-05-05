@@ -38,6 +38,7 @@ jobs:
             git config --global user.email "github-actions@github.com"
             git config --global user.name "GitHub Actions"
             git tag -a "v$CURRENT_VERSION" -m "chore: add tag v$CURRENT_VERSION from npm"
+            git push origin "v$CURRENT_VERSION"
           fi
 
       - name: Semantic Release and Publish
