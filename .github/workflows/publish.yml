@@ -14,7 +14,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -28,6 +28,17 @@ jobs:
 
       - name: Install with Bun
         run: bun install
+
+      - name: Verify current version
+        run: |
+          CURRENT_VERSION=$(npm view @arthurrios/biome-config version 2>/dev/null || echo '0.0.0')
+          echo "Current published version: $CURRENT_VERSION"
+          if ! git tag -l "v$CURRENT_VERSION" > /dev/null; then
+            echo "Creating missing tag for current version"
+            git config --global user.email "github-actions@github.com"
+            git config --global user.name "GitHub Actions"
+            git tag -a "v$CURRENT_VERSION" -m "chore: add tag v$CURRENT_VERSION from npm"
+          fi
 
       - name: Semantic Release and Publish
         uses: cycjimmy/semantic-release-action@v4
