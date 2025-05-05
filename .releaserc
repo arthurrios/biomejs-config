@@ -6,7 +6,7 @@
 		[
 			"@semantic-release/exec",
 			{
-				"verifyConditionsCmd": "latest=$(npm view @arthurrios/biome-config version 2>/dev/null || echo '0.0.0') && git tag -l \"v$latest\" || (git tag -a \"v$latest\" -m \"chore: add tag v$latest from npm\" && git push origin \"v$latest\")"
+				"verifyConditionsCmd": "echo 'Verifying conditions for semantic-release'"
 			}
 		],
 		[
