@@ -1,8 +1,5 @@
-# 1.0.0 (2025-05-02)
-
-
+# 1.0.8 (2024-05-02)
 ### Bug Fixes
-
 * ci permissions ([a84e7e0](https://github.com/arthurrios/biomejs-config/commit/a84e7e0dc0044d6bb5ec5925f9a348d2a20bbdef))
 * credentials persistance ([4daab9e](https://github.com/arthurrios/biomejs-config/commit/4daab9efde1e668f128f1c5796f48a1347019489))
 * credentials persistance ([4ccda6e](https://github.com/arthurrios/biomejs-config/commit/4ccda6e4f0646e90824aca44e1c1723bd775702e))
