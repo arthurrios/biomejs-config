@@ -44,15 +44,13 @@
 			"correctness": {
 				"noUnusedImports": "warn"
 			},
-			"nursery": {
-				"useAriaPropsSupportedByRole": "warn"
-			},
 			"a11y": {
 				"useAltText": "warn",
 				"useValidAriaProps": "warn",
 				"useValidAriaValues": "warn",
 				"useAriaPropsForRole": "warn",
-				"noAriaUnsupportedElements": "warn"
+				"noAriaUnsupportedElements": "warn",
+				"useAriaPropsSupportedByRole": "warn"
 			}
 		}
 	}
