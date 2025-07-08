@@ -1,14 +1,9 @@
+# This file will now only contain the publish workflow. The PR workflow will be moved to .github/workflows/release-pr.yml
 name: Publish
 
 on:
   push:
     branches: [main]
-
-permissions:
-  contents: write
-  id-token: write
-  issues: write
-  pull-requests: write
 
 jobs:
   publish:
@@ -19,30 +14,16 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Fetch missing tags
-        run: git fetch --tags --prune
-
-      - uses: oven-sh/setup-bun@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Install with Bun
+      - name: Install dependencies
         run: bun install
 
-      - name: Verify current version
-        run: |
-          CURRENT_VERSION=$(npm view @arthurrios/biome-config version 2>/dev/null || echo '0.0.0')
-          echo "Current published version: $CURRENT_VERSION"
-          if ! git tag -l "v$CURRENT_VERSION" > /dev/null; then
-            echo "Creating missing tag for current version"
-            git config --global user.email "github-actions@github.com"
-            git config --global user.name "GitHub Actions"
-            git tag -a "v$CURRENT_VERSION" -m "chore: add tag v$CURRENT_VERSION from npm"
-            git push origin "v$CURRENT_VERSION"
-          fi
-
-      - name: Semantic Release and Publish
-        uses: cycjimmy/semantic-release-action@v4
+      - name: Run semantic-release (publish)
+        run: npx semantic-release --no-ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
