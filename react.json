@@ -42,7 +42,8 @@
 			"a11y": {
 				"useAltText": "warn",
 				"useAriaPropsForRole": "warn",
-				"noAriaUnsupportedElements": "warn"
+				"noAriaUnsupportedElements": "warn",
+				"useButtonType": "off"
 			}
 		}
 	}

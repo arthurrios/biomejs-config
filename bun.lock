@@ -15,7 +15,7 @@
         "semantic-release": "^24.2.3",
       },
       "peerDependencies": {
-        "@biomejs/biome": "^1.9.4",
+        "@biomejs/biome": "^2.1.1",
         "next": ">=13.0.0",
         "react": ">=16.0.0",
         "typescript": ">=5",

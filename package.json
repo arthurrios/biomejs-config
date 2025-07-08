@@ -1,13 +1,13 @@
 {
 	"name": "@arthurrios/biome-config",
-	"version": "1.0.8",
+	"version": "1.1.0",
 	"private": false,
 	"description": "Biome configuration for React, Next.js, and Node projects used by Rocketseat.",
 	"main": "biome.json",
 	"license": "MIT",
 	"repositoryUrl": "https://github.com/arthurrios/rocketseat-biome-config.git",
 	"peerDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.1.1",
 		"typescript": ">=5",
 		"react": ">=16.0.0",
 		"next": ">=13.0.0"
