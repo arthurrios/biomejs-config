@@ -18,6 +18,9 @@
 			"lineEnding": "lf"
 		}
 	},
+	"organizeImports": {
+		"enabled": true
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -26,9 +29,6 @@
 				"noUselessElse": "off",
 				"useSelfClosingElements": "off",
 				"useImportType": "off"
-			},
-			"nursery": {
-				"useAriaPropsSupportedByRole": "warn"
 			},
 			"complexity": {
 				"useArrowFunction": "off",
@@ -43,7 +43,8 @@
 				"useAltText": "warn",
 				"useAriaPropsForRole": "warn",
 				"noAriaUnsupportedElements": "warn",
-				"useButtonType": "off"
+				"useButtonType": "off",
+				"useAriaPropsSupportedByRole": "warn"
 			}
 		}
 	}
