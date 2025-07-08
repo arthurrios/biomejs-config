@@ -1,18 +1,5 @@
 {
 	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
-	"files": {
-		"ignore": [
-			"node_modules",
-			"dist",
-			"build",
-			"out",
-			".next",
-			".turbo",
-			".vercel",
-			".idea",
-			".vscode"
-		]
-	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "space",

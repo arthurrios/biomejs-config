@@ -1,8 +1,5 @@
 {
 	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
-	"files": {
-		"ignore": ["node_modules", "dist", "build"]
-	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "space",
