@@ -15,9 +15,6 @@
 			"lineEnding": "lf"
 		}
 	},
-	"organizeImports": {
-		"enabled": true
-	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -42,6 +39,13 @@
 				"noAriaUnsupportedElements": "warn",
 				"useButtonType": "off",
 				"useAriaPropsSupportedByRole": "warn"
+			}
+		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
 			}
 		}
 	}

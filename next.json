@@ -14,9 +14,6 @@
 			"arrowParentheses": "always"
 		}
 	},
-	"organizeImports": {
-		"enabled": true
-	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -38,6 +35,13 @@
 				"useAriaPropsForRole": "warn",
 				"noAriaUnsupportedElements": "warn",
 				"useAriaPropsSupportedByRole": "warn"
+			}
+		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
 			}
 		}
 	}

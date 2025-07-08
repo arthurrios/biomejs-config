@@ -4,6 +4,12 @@
 	"private": false,
 	"description": "Biome configuration for React, Next.js, and Node projects used by Rocketseat.",
 	"main": "biome.json",
+	"exports": {
+		".": "./biome.json",
+		"./node": "./node.json",
+		"./react": "./react.json",
+		"./next": "./next.json"
+	},
 	"license": "MIT",
 	"repositoryUrl": "https://github.com/arthurrios/rocketseat-biome-config.git",
 	"peerDependencies": {
