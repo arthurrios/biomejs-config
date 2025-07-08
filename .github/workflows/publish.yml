@@ -18,6 +18,7 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
 
       - name: Fetch missing tags
         run: git fetch --tags --prune
@@ -29,14 +30,17 @@ jobs:
       - name: Install with Bun
         run: bun install
 
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Verify current version
         run: |
           CURRENT_VERSION=$(npm view @arthurrios/biome-config version 2>/dev/null || echo '0.0.0')
           echo "Current published version: $CURRENT_VERSION"
           if ! git tag -l "v$CURRENT_VERSION" > /dev/null; then
             echo "Creating missing tag for current version"
-            git config --global user.email "github-actions@github.com"
-            git config --global user.name "GitHub Actions"
             git tag -a "v$CURRENT_VERSION" -m "chore: add tag v$CURRENT_VERSION from npm"
             git push origin "v$CURRENT_VERSION"
           fi
@@ -44,5 +48,5 @@ jobs:
       - name: Semantic Release and Publish
         uses: cycjimmy/semantic-release-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
