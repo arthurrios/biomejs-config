@@ -44,5 +44,12 @@
 				"useAriaPropsSupportedByRole": "warn"
 			}
 		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	}
 }
