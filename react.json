@@ -15,9 +15,6 @@
 			"lineEnding": "lf"
 		}
 	},
-	"organizeImports": {
-		"enabled": true
-	},
 	"linter": {
 		"enabled": true,
 		"rules": {
